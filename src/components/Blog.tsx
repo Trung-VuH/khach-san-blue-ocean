@@ -5,23 +5,23 @@ import { ArrowRight } from 'lucide-react';
 const posts = [
   {
     id: 1,
-    title: 'Discover the Secrets of Our Award-Winning Spa',
-    category: 'Wellness',
-    date: 'March 15, 2026',
+    title: 'Khám Phá Bí Mật Của Spa Đạt Giải Thưởng Của Chúng Tôi',
+    category: 'Sức Khỏe',
+    date: '15 Tháng 3, 2026',
     image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2070&auto=format&fit=crop',
   },
   {
     id: 2,
-    title: 'Top 10 Local Attractions Near Rivora Hotel',
-    category: 'Travel',
-    date: 'March 10, 2026',
+    title: 'Top 10 Địa Điểm Tham Quan Gần Blue Ocean Hotel',
+    category: 'Du Lịch',
+    date: '10 Tháng 3, 2026',
     image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=2070&auto=format&fit=crop',
   },
   {
     id: 3,
-    title: 'A Culinary Journey: Meet Our Executive Chef',
-    category: 'Dining',
-    date: 'March 05, 2026',
+    title: 'Hành Trình Ẩm Thực: Gặp Gỡ Bếp Trưởng Điều Hành',
+    category: 'Ẩm Thực',
+    date: '05 Tháng 3, 2026',
     image: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974&auto=format&fit=crop',
   },
 ];
@@ -33,14 +33,14 @@ export const Blog = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <span className="text-gold uppercase tracking-[0.3em] text-xs font-semibold mb-4 block">
-              Our Blog
+              Blog Của Chúng Tôi
             </span>
             <h2 className="text-4xl md:text-5xl font-serif text-stone-900 leading-tight">
-              Latest News & Articles
+              Tin Tức & Bài Viết Mới Nhất
             </h2>
           </div>
           <button className="flex items-center gap-2 text-stone-900 hover:text-gold transition-colors uppercase tracking-widest text-xs font-semibold group">
-            View All Posts <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            Xem Tất Cả Bài Viết <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
 
@@ -72,7 +72,7 @@ export const Blog = () => {
                 {post.title}
               </h3>
               <div className="flex items-center gap-2 text-stone-900 group-hover:text-gold transition-colors text-xs uppercase tracking-widest font-bold">
-                Read More <ArrowRight size={14} />
+                Đọc Thêm <ArrowRight size={14} />
               </div>
             </motion.article>
           ))}

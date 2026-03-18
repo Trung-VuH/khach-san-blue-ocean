@@ -5,27 +5,27 @@ import { ArrowRight, Users, Maximize } from 'lucide-react';
 const rooms = [
   {
     id: 1,
-    name: 'Deluxe Ocean View',
+    name: 'Phòng Deluxe Hướng Biển',
     price: 299,
     image: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=2070&auto=format&fit=crop',
     size: '45m²',
-    guests: '2 Adults',
+    guests: '2 Người Lớn',
   },
   {
     id: 2,
-    name: 'Executive Suite',
+    name: 'Phòng Suite Cao Cấp',
     price: 450,
     image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=2070&auto=format&fit=crop',
     size: '65m²',
-    guests: '3 Adults',
+    guests: '3 Người Lớn',
   },
   {
     id: 3,
-    name: 'Presidential Villa',
+    name: 'Biệt Thự Tổng Thống',
     price: 899,
     image: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=2070&auto=format&fit=crop',
     size: '120m²',
-    guests: '4 Adults',
+    guests: '4 Người Lớn',
   },
 ];
 
@@ -36,14 +36,14 @@ export const Rooms = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <span className="text-gold uppercase tracking-[0.3em] text-xs font-semibold mb-4 block">
-              Accommodation
+              Chỗ Nghỉ
             </span>
             <h2 className="text-4xl md:text-5xl font-serif text-stone-900 leading-tight">
-              Luxury Rooms & Suites
+              Phòng & Suite Sang Trọng
             </h2>
           </div>
           <button className="flex items-center gap-2 text-stone-900 hover:text-gold transition-colors uppercase tracking-widest text-xs font-semibold group">
-            View All Rooms <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            Xem Tất Cả Phòng <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
 
@@ -65,7 +65,7 @@ export const Rooms = () => {
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute top-4 right-4 bg-white px-4 py-2 text-stone-900 font-serif">
-                  From ${room.price}
+                  Từ ${room.price}
                 </div>
               </div>
               <div className="flex items-center gap-6 text-stone-400 text-xs uppercase tracking-widest mb-3">
@@ -82,7 +82,7 @@ export const Rooms = () => {
                 {room.name}
               </h3>
               <button className="text-xs uppercase tracking-widest font-semibold border-b border-stone-200 pb-1 hover:border-gold transition-colors">
-                Book This Room
+                Đặt Phòng Này
               </button>
             </motion.div>
           ))}

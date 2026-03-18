@@ -6,24 +6,24 @@ const testimonials = [
   {
     id: 1,
     name: 'Sarah Johnson',
-    role: 'Business Traveler',
-    content: 'The attention to detail at Rivora is simply unmatched. From the moment I arrived, I felt like royalty. The room was pristine and the service was impeccable.',
+    role: 'Khách Công Tác',
+    content: 'Sự tỉ mỉ đến từng chi tiết tại Blue Ocean thực sự không gì sánh bằng. Từ lúc mới đến, tôi đã cảm thấy mình như một vị khách quý. Phòng nghỉ sạch sẽ và dịch vụ vô cùng hoàn hảo.',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974&auto=format&fit=crop',
   },
   {
     id: 2,
     name: 'Michael Chen',
-    role: 'Luxury Enthusiast',
-    content: 'I have stayed in hotels all over the world, but Rivora stands out for its elegant atmosphere and world-class dining experience. Highly recommended!',
+    role: 'Người Yêu Sự Sang Trọng',
+    content: 'Tôi đã ở nhiều khách sạn trên thế giới, nhưng Blue Ocean nổi bật với không gian thanh lịch và trải nghiệm ẩm thực đẳng cấp thế giới. Rất đáng để trải nghiệm!',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop',
   },
   {
     id: 3,
     name: 'Emma Williams',
-    role: 'Vacationer',
-    content: 'The spa facilities are incredible. It was the most relaxing weekend of my life. The staff goes above and beyond to ensure you have everything you need.',
+    role: 'Khách Du Lịch',
+    content: 'Cơ sở vật chất spa thật tuyệt vời. Đó là kỳ nghỉ cuối tuần thư giãn nhất trong đời tôi. Nhân viên luôn nỗ lực hết mình để đảm bảo bạn có mọi thứ mình cần.',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop',
   },
@@ -35,10 +35,10 @@ export const Testimonials = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <span className="text-gold uppercase tracking-[0.3em] text-xs font-semibold mb-4 block">
-            Testimonials
+            Đánh Giá
           </span>
           <h2 className="text-4xl md:text-5xl font-serif text-stone-900 leading-tight">
-            What Our Guests Say
+            Cảm Nhận Của Khách Hàng
           </h2>
         </div>
 

@@ -16,12 +16,12 @@ export const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#' },
-    { name: 'Rooms', href: '#rooms' },
-    { name: 'About', href: '#about' },
-    { name: 'Amenities', href: '#amenities' },
-    { name: 'Reviews', href: '#reviews' },
-    { name: 'Blog', href: '#blog' },
+    { name: 'Trang Chủ', href: '#' },
+    { name: 'Phòng Nghỉ', href: '#rooms' },
+    { name: 'Giới Thiệu', href: '#about' },
+    { name: 'Tiện Nghi', href: '#amenities' },
+    { name: 'Đánh Giá', href: '#reviews' },
+    { name: 'Tin Tức', href: '#blog' },
   ];
 
   return (
@@ -61,7 +61,7 @@ export const Navbar = () => {
               "text-3xl md:text-4xl font-serif tracking-tighter transition-colors",
               isScrolled ? "text-stone-900" : "text-white"
             )}>
-              RIVORA
+              BLUE OCEAN
             </h1>
           </div>
 
@@ -86,7 +86,7 @@ export const Navbar = () => {
                 ? "border-gold text-gold hover:bg-gold hover:text-white" 
                 : "border-white text-white hover:bg-white hover:text-stone-900"
             )}>
-              Book Now
+              Đặt Phòng
             </button>
           </div>
         </div>
@@ -102,7 +102,7 @@ export const Navbar = () => {
             className="fixed inset-0 z-[60] bg-stone-900 text-white p-8 flex flex-col"
           >
             <div className="flex justify-between items-center mb-12">
-              <h2 className="text-2xl font-serif">RIVORA</h2>
+              <h2 className="text-2xl font-serif">BLUE OCEAN</h2>
               <button onClick={() => setIsMobileMenuOpen(false)} className="p-2">
                 <X size={24} />
               </button>
@@ -123,11 +123,11 @@ export const Navbar = () => {
               <div className="flex flex-col gap-4 mb-8">
                 <div className="flex items-center gap-3 text-stone-400">
                   <Phone size={18} />
-                  <span>+1 (234) 567-890</span>
+                  <span>0949263768</span>
                 </div>
                 <div className="flex items-center gap-3 text-stone-400">
                   <Mail size={18} />
-                  <span>info@rivora.com</span>
+                  <span>info@blueocean.com</span>
                 </div>
               </div>
               <div className="flex gap-4">
