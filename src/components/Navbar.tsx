@@ -49,7 +49,7 @@ export const Navbar = () => {
     { name: 'Giới Thiệu', href: '/#about' },
     { name: 'Tiện Nghi', href: '/#amenities' },
     { name: 'Đánh Giá', href: '/#reviews' },
-    { name: 'Tin Tức', href: '/#blog' },
+    { name: 'Tin Tức', href: '/blog', isPage: true },
   ];
 
   return (
@@ -111,16 +111,29 @@ export const Navbar = () => {
           <div className="flex items-center gap-8">
             <div className="hidden lg:flex items-center gap-6">
               {navLinks.slice(3).map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className={cn(
-                    'text-sm uppercase tracking-widest font-medium hover:text-gold transition-colors',
-                    isScrolled || !isHomePage ? 'text-stone-800' : 'text-white'
-                  )}
-                >
-                  {link.name}
-                </a>
+                link.isPage ? (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    className={cn(
+                      'text-sm uppercase tracking-widest font-medium hover:text-gold transition-colors',
+                      isScrolled || !isHomePage ? 'text-stone-800' : 'text-white'
+                    )}
+                  >
+                    {link.name}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className={cn(
+                      'text-sm uppercase tracking-widest font-medium hover:text-gold transition-colors',
+                      isScrolled || !isHomePage ? 'text-stone-800' : 'text-white'
+                    )}
+                  >
+                    {link.name}
+                  </a>
+                )
               ))}
             </div>
             <button className={cn(

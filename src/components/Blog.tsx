@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const posts = [
   {
@@ -39,9 +40,12 @@ export const Blog = () => {
               Tin Tức & Bài Viết Mới Nhất
             </h2>
           </div>
-          <button className="flex items-center gap-2 text-stone-900 hover:text-gold transition-colors uppercase tracking-widest text-xs font-semibold group">
+          <Link 
+            to="/blog" 
+            className="flex items-center gap-2 text-stone-900 hover:text-gold transition-colors uppercase tracking-widest text-xs font-semibold group"
+          >
             Xem Tất Cả Bài Viết <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-          </button>
+          </Link>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -54,26 +58,30 @@ export const Blog = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group cursor-pointer"
             >
-              <div className="relative aspect-[16/10] overflow-hidden mb-6">
-                <img 
-                  src={post.image} 
-                  alt={post.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute top-4 left-4 bg-gold text-white text-[10px] uppercase tracking-widest px-3 py-1 font-semibold">
-                  {post.category}
+              <Link to={`/blog/${post.id}`}>
+                <div className="relative aspect-[16/10] overflow-hidden mb-6">
+                  <img 
+                    src={post.image} 
+                    alt={post.title} 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute top-4 left-4 bg-gold text-white text-[10px] uppercase tracking-widest px-3 py-1 font-semibold">
+                    {post.category}
+                  </div>
                 </div>
-              </div>
+              </Link>
               <div className="text-stone-400 text-[10px] uppercase tracking-widest mb-3 font-semibold">
                 {post.date}
               </div>
-              <h3 className="text-2xl font-serif text-stone-900 mb-4 group-hover:text-gold transition-colors leading-snug">
-                {post.title}
-              </h3>
-              <div className="flex items-center gap-2 text-stone-900 group-hover:text-gold transition-colors text-xs uppercase tracking-widest font-bold">
+              <Link to={`/blog/${post.id}`}>
+                <h3 className="text-2xl font-serif text-stone-900 mb-4 group-hover:text-gold transition-colors leading-snug">
+                  {post.title}
+                </h3>
+              </Link>
+              <Link to={`/blog/${post.id}`} className="flex items-center gap-2 text-stone-900 group-hover:text-gold transition-colors text-xs uppercase tracking-widest font-bold">
                 Đọc Thêm <ArrowRight size={14} />
-              </div>
+              </Link>
             </motion.article>
           ))}
         </div>
