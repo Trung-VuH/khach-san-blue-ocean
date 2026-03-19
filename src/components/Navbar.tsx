@@ -27,10 +27,13 @@ const MessengerIcon = ({ size = 20, className = "" }) => (
 );
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '@/src/lib/utils';
+import { Link, useLocation } from 'react-router-dom';
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,12 +44,12 @@ export const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Trang Chủ', href: '#' },
-    { name: 'Phòng Nghỉ', href: '#rooms' },
-    { name: 'Giới Thiệu', href: '#about' },
-    { name: 'Tiện Nghi', href: '#amenities' },
-    { name: 'Đánh Giá', href: '#reviews' },
-    { name: 'Tin Tức', href: '#blog' },
+    { name: 'Trang Chủ', href: '/', isPage: true },
+    { name: 'Phòng Nghỉ', href: '/rooms', isPage: true },
+    { name: 'Giới Thiệu', href: '/#about' },
+    { name: 'Tiện Nghi', href: '/#amenities' },
+    { name: 'Đánh Giá', href: '/#reviews' },
+    { name: 'Tin Tức', href: '/#blog' },
   ];
 
   return (
@@ -54,40 +57,55 @@ export const Navbar = () => {
       <nav
         className={cn(
           'fixed top-0 left-0 w-full z-50 transition-all duration-500 px-6 py-4',
-          isScrolled ? 'bg-white shadow-md py-3' : 'bg-transparent'
+          isScrolled || !isHomePage ? 'bg-white shadow-md py-3' : 'bg-transparent'
         )}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-8">
             <button 
               onClick={() => setIsMobileMenuOpen(true)}
-              className={cn("p-2 lg:hidden", isScrolled ? "text-stone-900" : "text-white")}
+              className={cn("p-2 lg:hidden", isScrolled || !isHomePage ? "text-stone-900" : "text-white")}
             >
               <Menu size={24} />
             </button>
             <div className="hidden lg:flex items-center gap-6">
               {navLinks.slice(0, 3).map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className={cn(
-                    'text-sm uppercase tracking-widest font-medium hover:text-gold transition-colors',
-                    isScrolled ? 'text-stone-800' : 'text-white'
-                  )}
-                >
-                  {link.name}
-                </a>
+                link.isPage ? (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    className={cn(
+                      'text-sm uppercase tracking-widest font-medium hover:text-gold transition-colors',
+                      isScrolled || !isHomePage ? 'text-stone-800' : 'text-white'
+                    )}
+                  >
+                    {link.name}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className={cn(
+                      'text-sm uppercase tracking-widest font-medium hover:text-gold transition-colors',
+                      isScrolled || !isHomePage ? 'text-stone-800' : 'text-white'
+                    )}
+                  >
+                    {link.name}
+                  </a>
+                )
               ))}
             </div>
           </div>
 
           <div className="absolute left-1/2 -translate-x-1/2">
-            <h1 className={cn(
-              "text-3xl md:text-4xl font-serif tracking-tighter transition-colors",
-              isScrolled ? "text-stone-900" : "text-white"
-            )}>
-              BLUE OCEAN
-            </h1>
+            <Link to="/">
+              <h1 className={cn(
+                "text-3xl md:text-4xl font-serif tracking-tighter transition-colors",
+                isScrolled || !isHomePage ? "text-stone-900" : "text-white"
+              )}>
+                BLUE OCEAN
+              </h1>
+            </Link>
           </div>
 
           <div className="flex items-center gap-8">
@@ -98,7 +116,7 @@ export const Navbar = () => {
                   href={link.href}
                   className={cn(
                     'text-sm uppercase tracking-widest font-medium hover:text-gold transition-colors',
-                    isScrolled ? 'text-stone-800' : 'text-white'
+                    isScrolled || !isHomePage ? 'text-stone-800' : 'text-white'
                   )}
                 >
                   {link.name}
@@ -107,7 +125,7 @@ export const Navbar = () => {
             </div>
             <button className={cn(
               "hidden md:block px-6 py-2 border text-xs uppercase tracking-widest transition-all duration-300",
-              isScrolled 
+              isScrolled || !isHomePage
                 ? "border-gold text-gold hover:bg-gold hover:text-white" 
                 : "border-white text-white hover:bg-white hover:text-stone-900"
             )}>
@@ -134,14 +152,25 @@ export const Navbar = () => {
             </div>
             <div className="flex flex-col gap-6">
               {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-2xl font-serif hover:text-gold transition-colors"
-                >
-                  {link.name}
-                </a>
+                link.isPage ? (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-2xl font-serif hover:text-gold transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-2xl font-serif hover:text-gold transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                )
               ))}
             </div>
             <div className="mt-auto pt-8 border-t border-white/10">

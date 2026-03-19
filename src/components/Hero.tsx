@@ -41,7 +41,7 @@ export const Hero = () => {
           className="mt-12"
         >
           <button className="px-10 py-4 bg-gold hover:bg-gold-dark text-white uppercase tracking-widest text-xs transition-all duration-300">
-            Discover More
+            Khám Phá Thêm
           </button>
         </motion.div>
       </div>

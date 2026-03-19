@@ -4,30 +4,19 @@
  */
 
 import React from 'react';
-import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { About } from './components/About';
-import { Rooms } from './components/Rooms';
-import { Amenities } from './components/Amenities';
-import { Testimonials } from './components/Testimonials';
-import { Blog } from './components/Blog';
-import { Footer } from './components/Footer';
-import { FloatingContact } from './components/FloatingContact';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HomePage } from './pages/HomePage';
+import { RoomListPage } from './pages/RoomListPage';
+import { RoomDetailPage } from './pages/RoomDetailPage';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Rooms />
-        <Amenities />
-        <Testimonials />
-        <Blog />
-      </main>
-      <Footer />
-      <FloatingContact />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/rooms" element={<RoomListPage />} />
+        <Route path="/rooms/:id" element={<RoomDetailPage />} />
+      </Routes>
+    </Router>
   );
 }
